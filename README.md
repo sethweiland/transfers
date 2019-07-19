@@ -1,50 +1,19 @@
-transfers
-================
+# Predicting European Soccer Transfer Prices
+* In European Soccer, teams have the ability to make a cash offer to another team in order to acquire a player.
+* It is a highly dynamic market
+* It is the subject of much fanfare
 
-Data on European football clubs' player transfers, through 1992/93 to 2018/19 seasons (as found on [Transfermarkt](https://www.transfermarkt.co.uk/)).
 
-Data
-----
+### Notes about which Jupyter Notebooks are what:
+* WebScrapping Includes webscrapping some statistics from wikipedia for goals and appearances, it is pretty messy.
+* EDA and Modeling Notebook has some graphs and all organized modeling, also has some building of additional features
+* "Where I Scrubbed and joined Fifa Video Game Player Attributes...ipynb" is where I scrubbed and joined fifa video game player attributes
+* I later merged these fifa video game attributes with the main transfer market price dataframe, and match statistics data frame in the main: "EDA and Modeling Notebook"
 
-Transfers can be found in the `data` directory, in .csv format. There's a sub-directory for each year/season (e.g. 2018/19 season is in `data/2018`) containing data for each of these leagues:
+*Code in "EDA" at the bottom has pytrends(google trends api) attempt and that takes a while to run, the feathered dataframe there will show the results of bringing in this data, but as a I struggled to merge it well, I realized that the return number from the API was in relation to the player's own search volume history so, a 17 for Cristiano Ronaldo would not be the same as a 17 for Emille Heskey, so this number would not be helpful for the regression.
 
-- English Premier League
-- English Championship
-- French Ligue 1
-- German 1.Bundesliga
-- Italian Serie A
-- Spanish La Liga 
-- Portugese Liga NOS
-- Dutch Eredivisie
-- Russian Premier Liga
+### Notes about feather files
+* "DataFrameforEDAandRegression.feather" will be read in using feather library in EDA and Modeling Notebook"
+* "fifa_df.feather" has fifa statistics, I join th
 
-Common variables:
 
--   `club_name` (club)
--   `player_name` (player name
--   `age` (player age at time of scrape)
--   `position` (player position)
--   `club_involved_name` (other club involved in transfer)
--   `fee` (raw transfer fee information)
--   `transfer_movement` (transfer in/out)
--   `fee_cleaned` (transformed `fee`)
--   `league_name` (league)
--   `year` (year)
--   `season` (season, interpolated from `year`)
-
-Code
-----
-
-All source code found in `/src`.
-
-Usage
------
-
-<img src="./figures/chelsea-transfers-web.png" width="471" />
-
-<img src="./figures/premier-league-transfer-spend-2018-web.png" width="471" />
-
-Sources
--------
-
-All squad data was scraped from [Transfermarkt](https://www.transfermarkt.co.uk/), in accordance with their [terms of use](https://www.transfermarkt.co.uk/intern/anb).
