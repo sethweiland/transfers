@@ -6,7 +6,7 @@
 
 ### Notes about which Jupyter Notebooks are what:
 * WebScrapping Includes webscrapping some statistics from wikipedia for goals and appearances, it is pretty messy.
-* EDA and Modeling Notebook has some graphs and all organized modeling, also has some building of additional features
+* **EDA and Modeling Notebook has some graphs and all organized modeling, also has some building of additional feature (this might be all you need to see) **
 * "Where I Scrubbed and joined Fifa Video Game Player Attributes...ipynb" is where I scrubbed and joined fifa video game player attributes
 * I later merged these fifa video game attributes with the main transfer market price dataframe, and match statistics data frame in the main: "EDA and Modeling Notebook"
 
@@ -14,6 +14,6 @@
 
 ### Notes about feather files
 * "DataFrameforEDAandRegression.feather" will be read in using feather library in EDA and Modeling Notebook"
-* "fifa_df.feather" has fifa statistics, I join th
+* "fifa_df.feather" has fifa statistics, I join this with DataFrameforEDAandRegression.feather later
 
 
